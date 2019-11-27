@@ -1,0 +1,38 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.29215.179
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PozitronDev.Validations", "src\PozitronDev.Validations\PozitronDev.Validations.csproj", "{F13CB7BA-504B-4A86-9AA8-559F699F6EAC}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{B0224D5A-AFF1-4001-BE47-8DD9B1842DF8}"
+	ProjectSection(SolutionItems) = preProject
+		azure-build.yaml = azure-build.yaml
+		LICENSE.txt = LICENSE.txt
+		README.md = README.md
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PozitronDev.Validations.Tests", "tests\PozitronDev.Validations.Tests\PozitronDev.Validations.Tests.csproj", "{59B33F3A-C38F-443D-B754-149F55CFF756}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{F13CB7BA-504B-4A86-9AA8-559F699F6EAC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F13CB7BA-504B-4A86-9AA8-559F699F6EAC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F13CB7BA-504B-4A86-9AA8-559F699F6EAC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F13CB7BA-504B-4A86-9AA8-559F699F6EAC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{59B33F3A-C38F-443D-B754-149F55CFF756}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{59B33F3A-C38F-443D-B754-149F55CFF756}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{59B33F3A-C38F-443D-B754-149F55CFF756}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{59B33F3A-C38F-443D-B754-149F55CFF756}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {402A9189-2F40-44B7-816E-BD52EB96C6D4}
+	EndGlobalSection
+EndGlobal
