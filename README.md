@@ -13,11 +13,11 @@ Nuget package for validating various inputs against invalid values. If validatio
 
 ## Usage
 
-Validation rules are implemented as extension methods to `ValidateFor` (`IValidate<T>`) clause. Therefore, distinct validation methods are available based on the underlying type.
+Validation rules are implemented as extension methods to `ValidateFor` (`IValidate<T>`) clause. Therefore, distinct validation methods are available based on the type of the object being extended.
 
 All validation methods accept optional `parameterName` argument. If the argument is ommited, the name of the underlying type is used to construct the exception messages.
 
-Inline usages are possible too, since all extensions return the original object. 
+Inline usages are possible too, since all extensions return the input object. 
 
 - Argument validation example
 
@@ -52,6 +52,10 @@ Inline usages are possible too, since all extensions return the original object.
     myString.ValidateFor().NullOrEmpty(nameof(myString));
     myString.ValidateFor().NullOrWhiteSpace(nameof(myString));
 
+    int myInt;
+    myInt.ValidateFor().Default();
+    myInt.ValidateFor().Default(nameof(myInt));
+
     IEnumerable<T> myList;
     myList.ValidateFor().NullOrEmpty();
     myList.ValidateFor().NullOrEmpty(nameof(myList));
@@ -69,22 +73,25 @@ Inline usages are possible too, since all extensions return the original object.
 
 - `T.IValidate<T>.Null<T>(string parameterName = null)`
   - For T as class or nullable ValueType
-  - Throws if T is null
+  - Throws if input is null
 
 - `T.IValidate<T>.NullOrEmpty<T>(string parameterName = null)`
   - For T as string
-  - Throws if string is null or empty
+  - Throws if input string is null or empty
 
 - `T.IValidate<T>.Null<T>(string parameterName = null)`
   - For T as string
-  - Throws if string is null, empty or whitespace
+  - Throws if input string is null, empty or whitespace
+
+- `T.IValidate<T>.Default<T>(string parameterName = null)`
+  - Throws if input is default value for type T
 
 - `IEnumerable<T>.IValidate<IEnumerable<T>>.NullOrEmpty<T>(string parameterName = null)`
-  - Throws if null or empty collection
+  - Throws if input is null or empty collection
 
 - `T.IValidate<T>.NotFound<T, TKey>(TKey key, string parameterName = null)`
   - For T as class, TKey as not nullable struct
-  - Throws if the queried object by key value is null.
+  - Throws if input (the queried object by key value) is null.
   - Throws NotFoundException, custom exception defined in this package.
 
 ## Extending with your own validation rules
