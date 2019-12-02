@@ -2,10 +2,9 @@
 
 &nbsp; [![NuGet](https://img.shields.io/nuget/v/PozitronDev.Validations.svg)](https://www.nuget.org/packages/PozitronDev.Validations)[![NuGet](https://img.shields.io/nuget/dt/PozitronDev.Validations.svg)](https://www.nuget.org/packages/PozitronDev.Validations)
 
-&nbsp; [![Build Status](https://dev.azure.com/pozitrongroup/PozitronDev.Validations/_apis/build/status/fiseni.PozitronDev.Validations?branchName=master)](https://dev.azure.com/pozitrongroup/PozitronDev.Validations/_build/latest?definitionId=7&branchName=master)
+&nbsp; [![Build Status](https://dev.azure.com/pozitrondev/PozitronDev.Validations/_apis/build/status/fiseni.PozitronDev.Validations?branchName=master)](https://dev.azure.com/pozitrondev/PozitronDev.Validations/_build/latest?definitionId=4&branchName=master)
 
-&nbsp; [![Azure DevOps coverage](https://img.shields.io/azure-devops/coverage/pozitrongroup/PozitronDev.Validations/7.svg)](https://dev.azure.com/pozitrongroup/PozitronDev.Validations/_build/latest?definitionId=7&branchName=master)
-
+&nbsp; [![Azure DevOps coverage](https://img.shields.io/azure-devops/coverage/pozitrondev/PozitronDev.Validations/4.svg)](https://dev.azure.com/pozitrondev/PozitronDev.Validations/_build/latest?definitionId=4&branchName=master)
 
 # PozitronDev Validations
 
