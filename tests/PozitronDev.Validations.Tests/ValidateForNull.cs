@@ -10,6 +10,7 @@ namespace PozitronDev.Validations.Tests
         [Fact]
         public void DoesNothingGivenNonNullValue()
         {
+            "".ValidateFor().Null();
             "".ValidateFor().Null("string");
             new object().ValidateFor().Null("object");
 
@@ -20,6 +21,7 @@ namespace PozitronDev.Validations.Tests
         [Fact]
         public void ThrowsGivenNullValue()
         {
+            Assert.Throws<ArgumentNullException>(() => ((object)null).ValidateFor().Null());
             Assert.Throws<ArgumentNullException>(() => ((object)null).ValidateFor().Null("null"));
             Assert.Throws<ArgumentNullException>(() => ((int?)null).ValidateFor().Null("null"));
             Assert.Throws<ArgumentNullException>(() => ((string)null).ValidateFor().Null("null"));

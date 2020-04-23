@@ -11,6 +11,7 @@ namespace PozitronDev.Validations.Tests
         [Fact]
         public void DoesNothingGivenNonEmptyStringValue()
         {
+            "a".ValidateFor().NullOrEmpty();
             "a".ValidateFor().NullOrEmpty("string");
             "1".ValidateFor().NullOrEmpty("aNumericString");
 
@@ -21,6 +22,7 @@ namespace PozitronDev.Validations.Tests
         [Fact]
         public void DoesNothingGivenNonEmptyEnumerable()
         {
+            ((IEnumerable<string>)(new[] { "foo", "bar" })).ValidateFor().NullOrEmpty();
             ((IEnumerable<string>)(new[] { "foo", "bar" })).ValidateFor().NullOrEmpty("stringArray");
             ((IEnumerable<int>)(new[] { 1, 2 })).ValidateFor().NullOrEmpty("intArray");
 
@@ -31,7 +33,9 @@ namespace PozitronDev.Validations.Tests
         [Fact]
         public void ThrowsGivenNullValue()
         {
+            Assert.Throws<ArgumentNullException>(() => ((string)null).ValidateFor().NullOrEmpty());
             Assert.Throws<ArgumentNullException>(() => ((string)null).ValidateFor().NullOrEmpty("null"));
+            Assert.Throws<ArgumentNullException>(() => ((IEnumerable<string>)null).ValidateFor().NullOrEmpty());
             Assert.Throws<ArgumentNullException>(() => ((IEnumerable<string>)null).ValidateFor().NullOrEmpty("null"));
 
             Assert.Throws<ArgumentNullException>(() => PozValidate.For.NullOrEmpty(null, "null"));
@@ -40,6 +44,7 @@ namespace PozitronDev.Validations.Tests
         [Fact]
         public void ThrowsGivenEmptyString()
         {
+            Assert.Throws<ArgumentException>(() => string.Empty.ValidateFor().NullOrEmpty());
             Assert.Throws<ArgumentException>(() => string.Empty.ValidateFor().NullOrEmpty("emptystring"));
 
             Assert.Throws<ArgumentException>(() => PozValidate.For.NullOrEmpty("", "emptystring"));
@@ -48,6 +53,7 @@ namespace PozitronDev.Validations.Tests
         [Fact]
         public void ThrowsGivenEmptyEnumerable()
         {
+            Assert.Throws<ArgumentException>(() => Enumerable.Empty<string>().ValidateFor().NullOrEmpty());
             Assert.Throws<ArgumentException>(() => Enumerable.Empty<string>().ValidateFor().NullOrEmpty("emptyStringEnumerable"));
 
             Assert.Throws<ArgumentException>(() => PozValidate.For.NullOrEmpty(Enumerable.Empty<string>(), "emptyStringEnumerable"));

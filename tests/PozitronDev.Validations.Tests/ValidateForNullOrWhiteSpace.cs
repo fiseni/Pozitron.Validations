@@ -15,6 +15,7 @@ namespace PozitronDev.Validations.Tests
         [InlineData("trailing whitespace ")]
         public void DoesNothingGivenNonEmptyStringValue(string nonEmptyString)
         {
+            nonEmptyString.ValidateFor().NullOrWhiteSpace();
             nonEmptyString.ValidateFor().NullOrWhiteSpace("string");
             nonEmptyString.ValidateFor().NullOrWhiteSpace("aNumericString");
 
@@ -25,6 +26,7 @@ namespace PozitronDev.Validations.Tests
         [Fact]
         public void ThrowsGivenNullValue()
         {
+            Assert.Throws<ArgumentNullException>(() => ((string)null).ValidateFor().NullOrWhiteSpace());
             Assert.Throws<ArgumentNullException>(() => ((string)null).ValidateFor().NullOrWhiteSpace("null"));
 
             Assert.Throws<ArgumentNullException>(() => PozValidate.For.NullOrWhiteSpace(null, "null"));
@@ -33,6 +35,7 @@ namespace PozitronDev.Validations.Tests
         [Fact]
         public void ThrowsGivenEmptyString()
         {
+            Assert.Throws<ArgumentException>(() => string.Empty.ValidateFor().NullOrWhiteSpace());
             Assert.Throws<ArgumentException>(() => string.Empty.ValidateFor().NullOrWhiteSpace("emptystring"));
 
             Assert.Throws<ArgumentException>(() => PozValidate.For.NullOrWhiteSpace("", "emptystring"));
@@ -43,6 +46,7 @@ namespace PozitronDev.Validations.Tests
         [InlineData("   ")]
         public void ThrowsGivenWhiteSpaceString(string whiteSpaceString)
         {
+            Assert.Throws<ArgumentException>(() => whiteSpaceString.ValidateFor().NullOrWhiteSpace());
             Assert.Throws<ArgumentException>(() => whiteSpaceString.ValidateFor().NullOrWhiteSpace("whitespacestring"));
 
             Assert.Throws<ArgumentException>(() => PozValidate.For.NullOrWhiteSpace(whiteSpaceString, "whitespacestring"));

@@ -6,11 +6,12 @@ using PozitronDev.Validations.Exceptions;
 
 namespace PozitronDev.Validations.Tests
 {
-    public class IValidateForNotFound
+    public class ValidateForNotFound
     {
         [Fact]
         public void DoesNothingGivenNonNullValue()
         {
+            new object().ValidateFor().NotFound("1");
             new object().ValidateFor().NotFound("1", "object");
             new object().ValidateFor().NotFound(1, "object");
 
@@ -21,6 +22,7 @@ namespace PozitronDev.Validations.Tests
         [Fact]
         public void ThrowsGivenNullValue()
         {
+            Assert.Throws<NotFoundException>(() => ((object)null).ValidateFor().NotFound("1"));
             Assert.Throws<NotFoundException>(() => ((object)null).ValidateFor().NotFound("1", "null"));
             Assert.Throws<NotFoundException>(() => ((object)null).ValidateFor().NotFound(1, "null"));
 

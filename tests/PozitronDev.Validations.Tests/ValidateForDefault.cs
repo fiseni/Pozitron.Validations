@@ -26,6 +26,7 @@ namespace PozitronDev.Validations.Tests
         [Fact]
         public void ThrowsGivenDefaultValue()
         {
+            Assert.Throws<ArgumentException>(() => default(string).ValidateFor().Default());
             Assert.Throws<ArgumentException>(() => default(string).ValidateFor().Default("string"));
             Assert.Throws<ArgumentException>(() => default(int).ValidateFor().Default("int"));
             Assert.Throws<ArgumentException>(() => default(Guid).ValidateFor().Default("guid"));
