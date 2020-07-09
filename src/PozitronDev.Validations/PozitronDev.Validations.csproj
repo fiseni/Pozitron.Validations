@@ -11,13 +11,13 @@
     <Summary>Extensions to System.Object for inline validations against various rules.</Summary>
     <Copyright>Copyright © 2019 Pozitron Group LLC</Copyright>
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
-    <PackageReleaseNotes>Initial Release.</PackageReleaseNotes>
+    <PackageReleaseNotes>NullOrEmpty available not only for IEnumerable, but for all derrived classes</PackageReleaseNotes>
     <PackageProjectUrl>https://github.com/fiseni/PozitronDev.Validations</PackageProjectUrl>
     <PackageIconUrl>https://pozitrongroup.com/PozitronLogo.png</PackageIconUrl>
     <PackageIcon>pozitronicon.png</PackageIcon>
     <PackageTags>pozitron validations extensions</PackageTags>
     <PackageLicenseExpression>MIT</PackageLicenseExpression>
-    <Version>1.0.0</Version>
+    <Version>1.1.0</Version>
     <DocumentationFile>bin\$(Configuration)\PozitronDev.Validations.xml</DocumentationFile>
     <RepositoryUrl>https://github.com/fiseni/PozitronDev.Validations</RepositoryUrl>
     <PublishRepositoryUrl>true</PublishRepositoryUrl>

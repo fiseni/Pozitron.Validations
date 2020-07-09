@@ -76,11 +76,11 @@ Inline usages are possible too, since all extensions return the input object.
 
 - `T.IValidate<T>.NullOrEmpty<T>(string parameterName = null)`
   - For T as string
-  - Throws if input string is null or empty
+  - Throws if input is null or empty string
 
-- `T.IValidate<T>.Null<T>(string parameterName = null)`
+- `T.IValidate<T>.NullOrWhiteSpace<T>(string parameterName = null)`
   - For T as string
-  - Throws if input string is null, empty or whitespace
+  - Throws if input is null, empty string or whitespace only
 
 - `T.IValidate<T>.Default<T>(string parameterName = null)`
   - Throws if input is default value for type T
