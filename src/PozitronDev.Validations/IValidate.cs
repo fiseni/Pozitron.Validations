@@ -8,7 +8,7 @@ namespace PozitronDev.Validations
     /// Simple interface to provide a generic mechanism to build extension methods from.
     /// </summary>
     /// <typeparam name="T"></typeparam>
-    public interface IValidate<T>
+    public interface IValidate<out T>
     {
         /// <summary>
         /// The object being extended.

@@ -22,12 +22,17 @@ namespace PozitronDev.Validations.Tests
         [Fact]
         public void DoesNothingGivenNonEmptyEnumerable()
         {
-            ((IEnumerable<string>)(new[] { "foo", "bar" })).ValidateFor().NullOrEmpty();
-            ((IEnumerable<string>)(new[] { "foo", "bar" })).ValidateFor().NullOrEmpty("stringArray");
-            ((IEnumerable<int>)(new[] { 1, 2 })).ValidateFor().NullOrEmpty("intArray");
+            new[] { "foo", "bar" }.ValidateFor().NullOrEmpty();
+            new[] { "foo", "bar" }.ValidateFor().NullOrEmpty("stringArray");
+            new[] { 1, 2 }.ValidateFor().NullOrEmpty("intArray");
+            new List<string>() { "foo", "bar" }.ValidateFor().NullOrEmpty();
+            new List<string>() { "foo", "bar" }.ValidateFor().NullOrEmpty("stringList");
+            new List<int>() { 1, 2 }.ValidateFor().NullOrEmpty("intList");
 
             PozValidate.For.NullOrEmpty(new[] { "foo", "bar" }, "stringArray");
             PozValidate.For.NullOrEmpty(new[] { 1, 2 }, "intArray");
+            PozValidate.For.NullOrEmpty(new List<string>() { "foo", "bar" }, "stringList");
+            PozValidate.For.NullOrEmpty(new List<int>() { 1, 2 }, "intList");
         }
 
         [Fact]
