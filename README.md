@@ -32,6 +32,17 @@ Inline usages are possible too, since all extensions return the input object.
 - Inline usage example:
 
 ```c#
+    public List<Customer> GetCustomers()
+    {
+        return dbContext.Customer
+                        .Where(x => x.Name = "Something")
+                        .OrderBy(x => x.Name)
+                        .ToListAsync()
+                        .ValidateFor().NullOrEmpty;
+    }
+```
+
+```c#
     public Address GetCustomerAddress(Customer customer)
     {
         return customer.ValidateFor().Null().Address;
