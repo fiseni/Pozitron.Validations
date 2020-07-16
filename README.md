@@ -32,7 +32,7 @@ Inline usages are possible too, since all extensions return the input object.
 - Inline usage example:
 
 ```c#
-    public List<Customer> GetCustomers()
+    public IEnumerable<Customer> GetCustomers()
     {
         return dbContext.Customer
                         .Where(x => x.Name = "Something")
