@@ -32,13 +32,13 @@ Inline usages are possible too, since all extensions return the input object.
 - Inline usage example:
 
 ```c#
-    public IEnumerable<Customer> GetCustomers()
+    public async Task<IEnumerable<Company>> GetCompanies()
     {
-        return dbContext.Customer
-                        .Where(x => x.Name = "Something")
-                        .OrderBy(x => x.Name)
-                        .ToListAsync()
-                        .ValidateFor().NullOrEmpty;
+        return (await dbContext.Companies
+                                .Where(x => x.Name == "MyCompany")
+                                .OrderBy(x => x.Name)
+                                .ToListAsync())
+                                .ValidateFor().NullOrEmpty();
     }
 ```
 
