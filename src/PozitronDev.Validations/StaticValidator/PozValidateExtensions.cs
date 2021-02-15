@@ -160,7 +160,7 @@ namespace PozitronDev.Validations
         /// <param name="queriedObject"></param>
         /// <param name="objectName"></param>
         /// <exception cref="NotFoundException"></exception>
-        public static void NotFound(this IPozValidate pozValidateClause, int key, object queriedObject, string objectName)
+        public static void NotFound<TKey>(this IPozValidate pozValidateClause, TKey key, object queriedObject, string objectName) where TKey : struct
         {
             queriedObject.ValidateFor().NotFound(key, objectName);
         }
